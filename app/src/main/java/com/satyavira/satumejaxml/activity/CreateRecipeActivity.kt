@@ -44,10 +44,10 @@ class CreateRecipeActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.chef)
 
-        addButton = findViewById(R.id.add_button);
-        tableLayout = findViewById(R.id.tabel_bahan);
-        bahanEditText = findViewById(R.id.edit_text_2);
-        budgetEditText = findViewById(R.id.edit_text_1);
+        addButton = findViewById(R.id.add_button)
+        tableLayout = findViewById(R.id.tabel_bahan)
+        bahanEditText = findViewById(R.id.edit_text_2)
+        budgetEditText = findViewById(R.id.edit_text_1)
 
         addButton.setOnClickListener {
             handleClickAdd()
@@ -66,7 +66,7 @@ class CreateRecipeActivity : Activity() {
         }
 
         sendButton = findViewById(R.id.button)
-        updateSendButtonEnabledState();
+        updateSendButtonEnabledState()
         sendButton.setOnClickListener { // Navigate to VerifyFingerprintActivity
             handleClick()
         }
@@ -181,7 +181,7 @@ class CreateRecipeActivity : Activity() {
             CAMERA_REQUEST
         ) // Request code for capturing image
     }
-    protected override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
@@ -190,7 +190,7 @@ class CreateRecipeActivity : Activity() {
             val imageBitmap = extras!!["data"] as Bitmap
 
             images.add(imageBitmap)
-            imageBitmapAdapter.notifyItemInserted(images.size - 1);  // Notify adapter of new item
+            imageBitmapAdapter.notifyItemInserted(images.size - 1)  // Notify adapter of new item
             updateSendButtonEnabledState()
         }
     }
@@ -203,7 +203,7 @@ class CreateRecipeActivity : Activity() {
             )
         startActivity(intent)
     }
-    fun handleClick() {
+    private fun handleClick() {
         insertAllImagesToDatabase()
         saveTableDataToDatabase()
 
@@ -213,8 +213,8 @@ class CreateRecipeActivity : Activity() {
     }
     private fun insertAllImagesToDatabase() {
         if (imageBitmapAdapter.itemCount > 0) {
-            for (i in 0 until imageBitmapAdapter.getItemCount()) {
-                val image: Bitmap = imageBitmapAdapter.images.get(i)
+            for (i in 0 until imageBitmapAdapter.itemCount) {
+                val image: Bitmap = imageBitmapAdapter.images[i]
                 val databaseHelper = DatabaseHelper.getInstance(this)
 
                 CoroutineScope(Dispatchers.IO).launch {  // Launch on a background thread
