@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_app"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/logosvg" />
+
+    <TextView
+        android:id="@+id/register_sc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="212dp"
+        android:gravity="top"
+        android:lineHeight="32sp"
+        android:text="@string/register_sc"
+        android:textAppearance="@style/text_bold" />
+
+    <EditText
+        android:id="@+id/schoolNameEditText"
+        android:layout_width="283dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="355dp"
+        android:background="@drawable/button_background"
+        android:padding="10dp"
+        android:elevation="4dp"
+        android:hint="@string/school_name" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="283dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/button_background"
+        android:padding="10dp"
+        android:elevation="4dp"
+        android:hint="@string/email"
+        />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="283dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="550dp"
+        android:background="@drawable/button_background"
+        android:elevation="4dp"
+        android:text="@string/register" />
+
+</RelativeLayout>

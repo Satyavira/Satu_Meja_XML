@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_fingerprint"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/gambar_account" />
+
+    <ImageButton
+        android:id="@+id/imageView1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/notifications"
+        tools:ignore="DuplicateIds" />
+
+    <ImageButton
+        android:id="@+id/settings_spinner"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/settings"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/Line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="110dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/chef"
+            android:contentDescription="@string/statistik" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="0dp">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chef"
+                android:textSize="16sp"
+                android:textAppearance="@style/text_bold"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fill_in_the_list_below"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <ScrollView
+        android:layout_below="@id/Line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@id/imageView3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Isi semua elemen yang ingin di-scroll di sini -->
+
+            <LinearLayout
+                android:id="@+id/line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/budget"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/budget"
+                    android:textAppearance="@style/text_bold_2" />
+
+                <EditText
+                    android:id="@+id/edit_text_1"
+                    android:layout_width="283dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="left"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bahan_yang_di_beli"
+                    android:textAppearance="@style/text_bold_2"/>
+
+                <EditText
+                    android:id="@+id/edit_text_2"
+                    android:layout_width="283dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="start"
+                    tools:ignore="Autofill,LabelFor" />
+                <Button
+                    android:id="@+id/add_button"
+                    android:layout_width="283dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_background"
+                    android:layout_gravity="center"
+                    android:text="Tambah Bahan"
+                    android:elevation="4dp"
+                    android:onClick="handleClickAdd"
+                    />
+
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/tabel_bahan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/budget"
+                android:divider="@color/black"
+                android:showDividers="end|middle"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- TextView 1 -->
+                    <TextView
+                        android:id="@+id/column1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/bahan"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black"/>
+
+                    <!-- TextView 2 -->
+                    <TextView
+                        android:id="@+id/column2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/budget"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+                </TableRow>
+
+
+
+            </TableLayout>
+
+            <LinearLayout
+                android:id="@+id/line3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/budget"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Makanan yang di masak :"
+                    android:textAppearance="@style/text_bold_2"/>
+
+                <Button
+                    android:id="@+id/capture_image_button"
+                    android:layout_width="283dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_background"
+                    android:layout_gravity="center"
+                    android:text="Add picture"
+                    android:elevation="4dp"
+                    android:onClick="handleClickCaptureImage"  />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/image_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="283dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/line3"
+                android:layout_gravity="center"
+                android:background="@drawable/button_background"
+                android:elevation="4dp"
+                android:text="@string/send"
+                android:onClick="handleClick"  />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bar_home" />
+
+    <ImageButton
+        android:id="@+id/imageView6"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/home"/>
+
+    <TextView
+        android:id="@+id/home_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="top"
+        android:lineHeight="32sp"
+        android:text="@string/Beranda"
+        android:paddingBottom="6dp"
+        android:textAppearance="@style/home" />
+
+
+
+
+</RelativeLayout>
